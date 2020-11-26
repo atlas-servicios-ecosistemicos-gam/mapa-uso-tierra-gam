@@ -67,7 +67,7 @@ pal <- colorFactor(
 Row
 -----------------------------------------------------------------------
 
-### Datos: [Uso y cobertura de la tierra](https://raw.githubusercontent.com/atlas-servicios-ecosistemicos-gam/datos/master/uso-tierra/gam/USO_COBERTURA_GAM.tif)
+### Datos: [Capa de uso y cobertura de la tierra](https://raw.githubusercontent.com/atlas-servicios-ecosistemicos-gam/datos/master/uso-tierra/gam/USO_COBERTURA_GAM.tif)
 ```{r}
 
 leaflet() %>%
