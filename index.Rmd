@@ -27,16 +27,20 @@ url_raster_uso_tierra <-
 
 #--------------- Objetos sf y raster --------------
 
-# Límite de la GAM (reproyectado a Web Mercator)
+# Límite de la GAM
 sf_limite_gam <- 
-  esri2sf(url_agfs_limite_gam) %>%
+  esri2sf(url_agfs_limite_gam)
+
+# Límite de la GAM (reproyectada a Web Mercator)
+sf_limite_gam_web <- 
+  sf_limite_gam %>%
   st_transform(3857)
 
 # Capa raster de uso de la tierra (en Web Mercator)
 raster_uso_tierra <-
   raster(url_raster_uso_tierra) %>%
-  crop(sf_limite_gam) %>%
-  mask(sf_limite_gam)
+  crop(sf_limite_gam_web) %>%
+  mask(sf_limite_gam_web)
 
 #---------------- Paletas de colores ---------------
 
